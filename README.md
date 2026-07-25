@@ -10,13 +10,13 @@ Data was collected via web crawling from publicly available sources (official br
 
 ## Approach
 
-**1. Initial Approach: LLM-based CEJ Mapping** (`01_llm_cej_mapping_initial_approach.ipynb`)
+**1. Initial Approach: LLM-based CEJ Mapping** ([`01_llm_cej_mapping_initial_approach.ipynb`](./01_llm_cej_mapping_initial_approach.ipynb))
 Text data from official brand website reviews was mapped to CEJ stages using LLM prompting.
 
-**2. Validation** (`02_eda_cej_validation.ipynb`)
+**2. Validation** ([`02_eda_cej_validation.ipynb`](./02_eda_cej_validation.ipynb))
 Exploratory data analysis was conducted to validate the CEJ mapping results. This step revealed that VLM-based mapping alone lacked sufficient reliability for the intended use case, prompting a shift in methodology.
 
-**3. Pivot: Embedding-based Clustering Pipeline** (`03_embedding_clustering_pipeline.ipynb`)
+**3. Pivot: Embedding-based Clustering Pipeline** ([`03_embedding_clustering_pipeline.ipynb`](./03_embedding_clustering_pipeline.ipynb))
 After identifying reliability limitations in the initial LLM-mapping approach, the methodology was redesigned around a five-stage embedding-based clustering pipeline:
 
 **(1) Chunking**
@@ -34,13 +34,8 @@ The filtered, embedded chunks were clustered using UMAP for dimensionality reduc
 **(5) Image Sub-Clustering**
 Within each text cluster, images were further sub-clustered to surface visual patterns not captured by text alone. For example, within a single text cluster centered on product satisfaction (T5), image sub-clustering revealed two distinct visual profiles — one focused on the product itself (T5_I0) and another focused on the surrounding space/interior context (T5_I2) — despite both sharing similar text-level sentiment. This distinction would have been invisible under a text-only analysis.
 
-
-**4. Final Analysis** (`04_cluster_insight_analysis.ipynb`)
+**4. Final Analysis** ([`04_cluster_insight_analysis.ipynb`](./04_cluster_insight_analysis.ipynb))
 The finalized pipeline was applied to Ohouse platform review data. Image sub-clustering within each text cluster revealed differentiated customer satisfaction profiles that were not visible from text alone (e.g., product-focused vs. space/interior-focused sub-clusters within the same text cluster).
-
 
 ## Tech Stack
 `Python` `Qwen3-VL-Embedding` `UMAP` `HDBSCAN` `LLM Prompting` `Selenium` `pandas`
-
-
-[Test Link](./01_llm_cej_mapping_initial_approach.ipynb)
