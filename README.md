@@ -41,3 +41,6 @@ The finalized pipeline was applied to Ohouse platform review data. Image sub-clu
 
 ## Tech Stack
 `Python` `Qwen3-VL-Embedding` `UMAP` `HDBSCAN` `LLM Prompting` `Selenium` `pandas`
+
+
+[Test Link](./01_llm_cej_mapping_initial_approach.ipynb)
